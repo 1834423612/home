@@ -364,13 +364,13 @@ var content = `
 版 本 号：v1.0
 更新日期：2022-06-01
 
-主页:  https://www.kjchmc.cn
-Github:  https://github.com/1834423612/
+主页:  https://www.kjchmc.cn/
+Github:  https://github.com/1834423612/home/
 `
 
 var copyright = `
 本页面源代码来自于：
-Github:  https://github.com/imsyy/home
+Github:  https://github.com/imsyy/home/
 `
 
 console.clear()
