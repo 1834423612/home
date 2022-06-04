@@ -986,3 +986,12 @@ footer {
     border-radius: 10px;
     background-color: #eeeeee;
 }
+
+/*Aplayer 播放器列表变蓝*/
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background-color: rgb(116 164 230 / 40%) !important;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-cur {
+    background-color: rgb(201 224 255) !important;
+}
