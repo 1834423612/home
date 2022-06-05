@@ -121,3 +121,35 @@ $(document).ready(function () {
         }
     });
 });
+
+//刷新缓存
+$(function(){
+    //监听".play_video"标签的点击事件
+    $(".set-cache-settings").click(function(){
+        //获取触发点击事件的标签。"$(this)"代表触发点击事件的标签
+        //获取id值
+        //var play_video_id = $(this).attr("id");
+        //var play_video_url = "http://www.test.com/player.html?play_video_id=" + play_video_id;
+        //window.open(play_video_url , 'dfq', 'height=400, width=600');
+        iziToast.show({
+            icon: "fa-solid fa-check",
+            timeout: 2500,
+            message: '清除成功,即将刷新页面！',
+        });
+        $.ajax({
+            url:'',
+            dataType:'document',
+            data:{},
+            cache:false, 
+            ifModified :true ,
+            success:function(response){
+                //操作
+                //window.location.reload();
+            },
+            async:false
+         });
+        window.setTimeout(function () {
+            window.location.reload();
+        },2500)
+    });
+});
