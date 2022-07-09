@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="force-rendering" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#424242"/>
     <meta name="description" content="一个正在上初三的学生建立的小站点">
     <meta name="keywords" content="kjch,kjch况佳城,况佳城,kjch简介,况佳城简介,况佳城个人主页,况佳城的主页,kjch的主页,kjch况佳城的主页">
     <meta name="author" content="kjch况佳城">
@@ -81,17 +82,11 @@
             <img id="bg" onerror="this.classList.add('error');"></img>
             <div class="cover"></div>
         </div>
-        <!--主体内容-->
+        <!-- 鼠标指针 -->
+        <div id="g-pointer-1"></div>
+        <div id="g-pointer-2"></div>
+        <!-- 主体内容 -->
         <main id="main" class="main">
-            <!--右侧悬浮按钮
-            <div class="left-btn">
-                <div class="el-tooltip type-icon" aria-describedby="el-tooltip-2160" tabindex="0">
-                    <i class="eva eva-refresh-outline"></i>
-                </div>
-                <a href="/setting" class="el-tooltip type-icon" aria-describedby="el-tooltip-1418" tabindex="0">
-                    <i class="eva eva-settings-2-outline"></i>
-                </a>
-            </div>-->
             <div class="container" id="container">
                 <div class="row" id="row">
                     <div class="col left">
@@ -101,8 +96,8 @@
                             <div class="main-img">
                                 <img src="https://raw.githubusercontents.com/1834423612/img-hosting/master/blog/浣熊.png" alt="img">
                                 <div class="img-title">
-                                    <span class="img-title">kjchmc</span>
-                                    <span class="img-text">.cn</span>
+                                    <span class="img-title-big" id="logo-text-1">kjchmc</span>
+                                    <span class="img-text" id="logo-text-2">.cn</span>
                                 </div>
                             </div>
                             <!--介绍信息-->
@@ -137,7 +132,7 @@
                     </div>
                     <!--第二屏 Logo-->
                     <div class="logo cards" style="display: none" id="changemore">
-                        <a class="logo-text">kjchmc.cn</a>
+                        <a class="logo-text" id="logo-text-small">kjchmc.cn</a>
                     </div>
                     <div class="col right">
                         <div class="main-right">
@@ -148,7 +143,7 @@
                                     <div class="hitokoto cards" id="hitokoto">
                                         <!--切换音乐-->
                                         <div class="open-music fixed-top" id="open-music">
-                                            <i class="fa-solid fa-music-note"></i>
+                                            <i class="fa-solid fa-compact-disc"></i>
                                             <span>&nbsp;打开音乐播放器</span>
                                         </div>
                                         <!--切换音乐结束-->
@@ -179,7 +174,7 @@
                                                 </div>
                                                 <div class="music-volume" style="display: none;">
                                                     <div id="volume-ico">
-                                                        <i class="fa-solid fa-volume"></i>
+                                                        <i class="fa-solid fa-volume-low"></i>
                                                     </div>
                                                     <input type="range" min="0" max="1" step="0.01" id="volume">
                                                 </div>
@@ -189,7 +184,7 @@
                                 </div>
                                 <div class="col times">
                                     <!--时间-->
-                                    <div class="time cards">
+                                    <div class="time cards" id="upWeather">
                                         <div class="timeshow" id="time">
                                             2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span
                                                 class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
@@ -197,10 +192,9 @@
                                         <div class="weather">
                                             <span id="city_text">天气</span>&nbsp;
                                             <span id="wea_text">加载失败</span>&nbsp;
-                                            <span id="tem_night"></span>°C~
-                                            <span id="tem_day"></span>°C&nbsp;
-                                            <span id="win_text"></span>
-                                            <span id="win_speed"></span>
+                                            <span id="tem_text"></span>
+                                            <span id="win_text">次数</span>
+                                            <span id="win_speed">超限</span>
                                         </div>
                                     </div>
                                 </div>
@@ -215,26 +209,26 @@
                                 <!--第一组-->
                                 <div class="row">
                                     <div class="col">
-                                        <a href="https://blog.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-1" href="https://blog.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-solid fa-blog"></i>
-                                                <span class="link-name">老况的小窝</span>
+                                                <i id="link-icon-1" class="fa-solid fa-blog"></i>
+                                                <span class="link-name" id="link-name-1">老况的小窝</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col 2">
-                                        <a href="https://pic.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-2" href="https://pic.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-solid fa-images"></i>
-                                                <span class="link-name">图床</span>
+                                                <i id="link-icon-2" class="fa-solid fa-images"></i>
+                                                <span class="link-name" id="link-name-2">图床</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a href="https://api.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-3" href="https://api.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-duotone fa-terminal"></i>
-                                                <span class="link-name">API</span>
+                                                <i id="link-icon-3" class="fa-duotone fa-terminal"></i>
+                                                <span class="link-name" id="link-name-3">API</span>
                                             </div>
                                         </a>
                                     </div>
@@ -242,26 +236,26 @@
                                 <!--第二组-->
                                 <div class="row" style="margin-top: 1.5rem;">
                                     <div class="col">
-                                        <a href="https://dh.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-4" href="https://dh.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-solid fa-compass"></i>
-                                                <span class="link-name">起始页</span>
+                                                <i id="link-icon-4" class="fa-solid fa-compass"></i>
+                                                <span class="link-name" id="link-name-4">起始页</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col 2">
-                                        <a href="https://lab.imsyy.top/game/2048/" target="_blank">
+                                        <a id="link-url-5" href="https://lab.imsyy.top/game/2048/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-solid fa-game-board"></i>
-                                                <span class="link-name">2048</span>
+                                                <i id="link-icon-5" class="fa-solid fa-game-board"></i>
+                                                <span class="link-name" id="link-name-5">2048</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a href="https://file.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-6" href="https://file.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i class="fa-solid fa-folder-open"></i>
-                                                <span class="link-name">文件库</span>
+                                                <i id="link-icon-6" class="fa-solid fa-folder-open"></i>
+                                                <span class="link-name" id="link-name-6">文件库</span>
                                             </div>
                                         </a>
                                     </div>
@@ -378,7 +372,7 @@
                             <div class="img-title">
                                 <span class="img-title">kjchmc</span>
                                 <span class="img-text">.cn</span><br />
-                                <span class="img-text">&nbsp;&nbsp;v&nbsp;1.0</span>
+                                <span class="img-text">&nbsp;&nbsp;v&nbsp;1.3</span>
                                 <a href="https://github.com/1834423612" target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
@@ -387,13 +381,13 @@
                             <div class="accordion" id="accordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button accordion-button-color-1" type="button" data-bs-toggle="collapse"
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapseOne" aria-expanded="true"
                                             aria-controls="collapseOne">
                                             壁纸设置
                                         </button>
                                     </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show accordion-body-color-1"
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordion">
                                         <div class="accordion-body">
                                             <div class="set">
@@ -406,17 +400,17 @@
                                                     <div class="form-radio">
                                                         <input type="radio" class="set-wallpaper" style="display: none;"
                                                             id="radio2" value="2" name="wallpaper-type">
-                                                        <label for="radio2">每日一图</label>
+                                                        <label for="radio2" id="wallpaper_text1">每日一图</label>
                                                     </div>
                                                     <div class="form-radio">
                                                         <input type="radio" class="set-wallpaper" style="display: none;"
                                                             id="radio3" value="3" name="wallpaper-type">
-                                                        <label for="radio3">随机风景</label>
+                                                        <label for="radio3" id="wallpaper_text2">随机风景</label>
                                                     </div>
                                                     <div class="form-radio">
                                                         <input type="radio" class="set-wallpaper" style="display: none;"
                                                             id="radio4" value="4" name="wallpaper-type">
-                                                        <label for="radio4">随机动漫</label>
+                                                        <label for="radio4" id="wallpaper_text3">随机动漫</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -488,7 +482,9 @@
                         </div>
                         <!--Aplayer-->
                         <div class="box-right">
-                            <div id="aplayer"></div>
+                            <div id="aplayer">
+                                <span>音乐播放器加载失败</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -496,7 +492,7 @@
         </main>
         <!-- 版权信息 -->
         <footer id="footer" class="fixed-bottom footer">
-            <div class="power">Copyright&nbsp;&copy;&nbsp;2020
+            <div class="power">Copyright&nbsp;&copy;&nbsp;<span id="power-year">2020</span>
                 <script>
                     document.write(' - ' + (new Date()).getFullYear())
                 </script>&nbsp;<a href="https://kjchmc.cn/">kjch况佳城</a>&nbsp;&amp;&nbsp;
@@ -507,12 +503,21 @@
             <div id="lrc"></div>
         </footer>
     </section>
+    <!-- sw.js -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("sw.js");
+            });
+        }
+    </script>
     <!-- noscript -->
     <noscript>
         <div class="noscript fixed-top">请开启 JavaScript</div>
     </noscript>
     <!-- JS -->
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/set.js"></script>
     <script type="text/javascript" src="./js/time.js"></script>
     <script type="text/javascript" src="./js/js.cookie.js"></script>
     <script type="text/javascript" src="./js/set.js"></script>

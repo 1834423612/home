@@ -1,3 +1,10 @@
+/*
+作者: imsyy
+主页：https://www.imsyy.top/
+GitHub：https://github.com/imsyy/home
+版权所有，请勿删除
+*/
+
 //弹窗样式
 iziToast.settings({
     timeout: 10000,
@@ -15,6 +22,29 @@ iziToast.settings({
     icon: 'Fontawesome',
     iconColor: '#efefef',
 });
+
+/* 鼠标样式 */
+const body = document.querySelector("body");
+const element = document.getElementById("g-pointer-1");
+const element2 = document.getElementById("g-pointer-2");
+const halfAlementWidth = element.offsetWidth / 2;
+const halfAlementWidth2 = element2.offsetWidth / 2;
+
+function setPosition(x, y) {
+    element2.style.transform = `translate(${x - halfAlementWidth2 + 1}px, ${y - halfAlementWidth2 + 1}px)`;
+}
+
+body.addEventListener('mousemove', (e) => {
+    window.requestAnimationFrame(function () {
+        setPosition(e.clientX, e.clientY);
+    });
+});
+
+//移动端去除鼠标样式
+switch (true) {
+    case navigator.userAgent.indexOf('Mobile') > 0:
+        $('#g-pointer-2').css("display", "none");
+}
 
 //加载完成后执行
 window.addEventListener('load', function () {
@@ -34,23 +64,26 @@ window.addEventListener('load', function () {
             message: '欢迎来到我的主页'
         });
     }, 800);
+
+    //延迟加载音乐播放器
+    var element = document.createElement("script");
+    element.src = "./js/music.js";
+    document.body.appendChild(element);
+
+    //中文字体缓加载-此处写入字体源文件
+    //先行加载简体中文子集，后续补全字集
+    //由于压缩过后的中文字体仍旧过大，可转移至对象存储或 CDN 加载
+    const font = new FontFace(
+        "MiSans",
+        "url(" + "./font/MiSans-Regular.woff2" + ")"
+    );
+    document.fonts.add(font);
+
 }, false)
 
 setTimeout(function () {
     $('#loading-text').html("字体及文件加载可能需要一定时间")
 }, 3000);
-
-//延迟加载音乐播放器
-function downloadJSAtOnload() {
-    var element = document.createElement("script");
-    element.src = "./js/music.js";
-    document.body.appendChild(element);
-}
-if (window.addEventListener)
-    window.addEventListener("load", downloadJSAtOnload, false);
-else if (window.attachEvent)
-    window.attachEvent("onload", downloadJSAtOnload);
-else window.onload = downloadJSAtOnload;
 
 //新春灯笼 （ 需要时取消注释 ）
 /*
@@ -113,7 +146,7 @@ $('#hitokoto').click(function () {
             .catch(console.error)
     } else {
         iziToast.show({
-            timeout: 2000,
+            timeout: 1000,
             icon: "fa-solid fa-circle-exclamation",
             message: '你点太快了吧'
         });
@@ -121,19 +154,61 @@ $('#hitokoto').click(function () {
 });
 
 //获取天气
-//每日限量 100 次
-//请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1')
-    .then(response => response.json())
-    .then(data => {
-        $('#wea_text').html(data.wea)
-        $('#city_text').html(data.city)
-        $('#tem_night').html(data.tem_night)
-        $('#tem_day').html(data.tem_day)
-        $('#win_text').html(data.win)
-        $('#win_speed').html(data.win_speed)
-    })
-    .catch(console.error)
+//请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
+//请前往 https://dev.qweather.com/ 申请 key
+const add_id = "wrknltonr0foslhs"; // app_id
+const app_secret = "Nlh1c0F6d0ZDU2pDR0J3YVBVbkhudz09"; // app_secret
+const key = "433f0c48615a48dfaf2f2b2444297e79" // key
+function getWeather() {
+    fetch("https://www.mxnzp.com/api/ip/self?app_id=" + add_id + "&app_secret=" + app_secret)
+        .then(response => response.json())
+        .then(data => {
+            let str = data.data.city
+            let city = str.replace(/市/g, '')
+            $('#city_text').html(city);
+            fetch("https://geoapi.qweather.com/v2/city/lookup?location=" + city + "&number=1&key=" + key)
+                .then(response => response.json())
+                .then(location => {
+                    let id = location.location[0].id
+                    fetch("https://devapi.qweather.com/v7/weather/now?location=" + id + "&key=" + key)
+                        .then(response => response.json())
+                        .then(weather => {
+                            $('#wea_text').html(weather.now.text)
+                            $('#tem_text').html(weather.now.temp+"°C&nbsp;")
+                            $('#win_text').html(weather.now.windDir)
+                            $('#win_speed').html(weather.now.windScale+"级")
+                        })
+                })
+        })
+        .catch(console.error);
+}
+
+getWeather();
+
+var wea = 0;
+$('#upWeather').click(function () {
+    if (wea == 0) {
+        wea = 1;
+        var index = setInterval(function () {
+            wea--;
+            if (wea == 0) {
+                clearInterval(index);
+            }
+        }, 60000);
+        getWeather();
+        iziToast.show({
+            timeout: 2000,
+            icon: "fa-solid fa-cloud-sun",
+            message: '实时天气已更新'
+        });
+    } else {
+        iziToast.show({
+            timeout: 1000,
+            icon: "fa-solid fa-circle-exclamation",
+            message: '请稍后再更新哦'
+        });
+    }
+});
 
 //获取时间
 var t = null;
@@ -210,6 +285,29 @@ $("#twitter").mouseover(function () {
 }).mouseout(function () {
     $("#link-text").html("通过这里联系我");
 });
+
+//自动变灰
+var myDate = new Date;
+var mon = myDate.getMonth() + 1;
+var date = myDate.getDate();
+var days = ['4.4', '5.12', '7.7', '9.9', '9.18', '12.13'];
+for (var day of days) {
+    var d = day.split('.');
+    if (mon == d[0] && date == d[1]) {
+        document.write(
+            '<style>html{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
+        )
+        $("#change").html("Silence&nbsp;in&nbsp;silence");
+        $("#change1").html("今天是中国国家纪念日，全站已切换为黑白模式");
+        window.addEventListener('load', function () {
+            iziToast.show({
+                timeout: 14000,
+                icon: "fa-solid fa-clock",
+                message: '今天是中国国家纪念日'
+            });
+        }, false);
+    }
+}
 
 //更多页面切换
 var shoemore = false;

@@ -31,7 +31,7 @@ $.ajax({
 
         /* 底栏歌词 */
         setInterval(function () {
-            $("#lrc").html("<span class='lrc-show'><i class='fa-solid fa-music-note'></i> " + $(".aplayer-lrc-current").text() + " <i class='fa-solid fa-music-note'></i></span>");
+            $("#lrc").html("<span class='lrc-show'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 13.535V3h8v3h-6v11a4 4 0 1 1-2-3.465z' fill='rgba(255,255,255,1)'/></svg>&nbsp;" + $(".aplayer-lrc-current").text() + "&nbsp;<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='18' height='18'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 13.535V3h8v3h-6v11a4 4 0 1 1-2-3.465z' fill='rgba(255,255,255,1)'/></svg></span>");
         }, 500);
 
         /* 音乐通知及控制 */
@@ -39,7 +39,7 @@ $.ajax({
             music = $(".aplayer-title").text() + $(".aplayer-author").text();
             iziToast.info({
                 timeout: 4000,
-                icon: "fa-solid fa-music-note",
+                icon: "fa-solid fa-circle-play",
                 displayMode: 'replace',
                 message: music
             });
@@ -99,11 +99,13 @@ $.ajax({
 
         $('#last').on('click', function () {
             ap.skipBack();
+            ap.play();
             $("#music-name").html($(".aplayer-title").text() + $(".aplayer-author").text());
         });
 
         $('#next').on('click', function () {
             ap.skipForward();
+            ap.play();
             $("#music-name").html($(".aplayer-title").text() + $(".aplayer-author").text());
         });
 
@@ -117,15 +119,15 @@ $.ajax({
         });
 
         //音量调节
-        $("#volume").on('click', function () {
+        $("#volume").on('click touchend', function () {
             var x = $("#volume").val();
             ap.volume(x, true);
             if (x == 0) {
                 $("#volume-ico").html("<i class='fa-solid fa-volume-xmark'></i>");
             } else if (x > 0 && x <= 0.3) {
-                $("#volume-ico").html("<i class='fa-solid fa-volume-low'></i>");
+                $("#volume-ico").html("<i class='fa-solid fa-volume-off'></i>");
             } else if (x > 0.3 && x <= 0.6) {
-                $("#volume-ico").html("<i class='fa-solid fa-volume'></i>");
+                $("#volume-ico").html("<i class='fa-solid fa-volume-low'></i>");
             } else {
                 $("#volume-ico").html("<i class='fa-solid fa-volume-high'></i>");
             }
