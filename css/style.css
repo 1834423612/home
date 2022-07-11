@@ -875,6 +875,38 @@ input[type="radio"]:checked+label {
 
 
 /*设置页自定义颜色布局*/
+
+/*缓存设置*/
+#cache-settings {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.form-cache {
+    flex: 1 1 0%;
+    width: 31.3%;
+    min-width: 31.3%;
+    max-width: 31.3%;
+    text-align: center;
+    margin: 1%;
+}
+
+input[type="cache"]+label {
+    padding: 6px 10px;
+    background: #ffffff26;
+    border-radius: 8px;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    width: 100%;
+}
+
+input[type="cache"]:checked+label {
+    background: #ffffff06;
+    border: 2px solid #eeeeee;
+}
+
 /*题目部分背景色*/
 .accordion-button-color-1 {
     background-color: rgb(99,149,232,0.6) !important;
