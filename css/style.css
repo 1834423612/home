@@ -186,7 +186,7 @@ main {
 }
 
 .main-img img {
-    /*border-radius: 50%;*/
+    border-radius: 50%;
     width: 120px;
 }
 
@@ -641,7 +641,7 @@ i.iconfont.icon-z_shangpinheji {
 .progress-bar {
     font-family: 'UnidreamLED' !important;
     background-color: #efefef !important;
-    /*color: rgb(86 77 89) !important;*/
+    color: rgb(86 77 89) !important;
     font-size: 0.95rem;
     height: 20px;
 }
@@ -771,12 +771,6 @@ i.iconfont.icon-github1 {
     padding: 0rem 1.5rem;
 }
 
-.restcache {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 1.5rem;
-}
-
 .btn-group,
 .btn-group-vertical {
     margin-top: 10px;
@@ -836,96 +830,18 @@ input[type="radio"]:checked+label {
     border: 2px solid #eeeeee;
 }
 
-/*缓存设置*/
-#cache-settings {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.form-cache {
-    flex: 1 1 0%;
-    width: 31.3%;
-    min-width: 31.3%;
-    max-width: 31.3%;
-    text-align: center;
-    margin: 1%;
-}
-
-input[type="cache"]+label {
-    padding: 6px 10px;
-    background: #ffffff26;
-    border-radius: 8px;
-    transition: 0.3s;
-    border: 2px solid transparent;
-    width: 100%;
-}
-
-input[type="cache"]:checked+label {
-    background: #ffffff06;
-    border: 2px solid #eeeeee;
-}
-
 /*更新日志*/
 .upnote {
     display: flex;
     flex-direction: column;
     padding: 0rem 1.5rem;
-    height: 123px;
+    height: 156px;
     overflow-y: auto;
 }
 
 .uptext {
     line-height: 32px;
 }
-
-/*设置页自定义颜色布局*/
-/*题目部分背景色*/
-.accordion-button-color-1 {
-    background-color: rgb(99,149,232,0.6) !important;
-}
-
-.accordion-button-color-2 {
-    background-color: rgb(231,218,47,0.5) !important;
-}
-
-.accordion-button-color-3 {
-    background-color: rgb(71,205,177,0.6) !important;
-}
-
-/*卡片主体背景色*/
-.accordion-body-color-1 {
-    background-color: rgba(113,143,192,0.4) !important;
-}
-
-.accordion-body-color-2 {
-    background-color: rgba(239,230,116,0.3) !important;
-}
-
-.accordion-body-color-3 {
-    background-color: rgba(131,198,185,0.4) !important;
-}
-
-/*Aplayer 播放器列表*/
-.aplayer .aplayer-body {
-    position: relative;
-    background-color: rgb(221 162 185 / 60%) !important;
-}
-
-.aplayer.aplayer-withlist .aplayer-list {
-    display: block;
-    background-color: rgb(208 175 192 / 30%) !important;
-}
-
-.aplayer .aplayer-list ol li.aplayer-list-light {
-    background-color: rgb(247 219 238 / 40%) !important; /*rgb(116 164 230 / 40%)*/
-}
-
-.aplayer .aplayer-list ol li .aplayer-list-cur {
-    background-color: rgb(240 76 150 / 70%) !important; /*#c9e0ff*/
-}
-
 
 /*Aplayer*/
 .box-right {
@@ -1107,7 +1023,7 @@ footer {
 }
 
 .iziToast>.iziToast-close {
-    background: url(https://raw.githubusercontents.com/imsyy/master/file/pic/close.png) no-repeat 50% 50% !important;
+    background: url(https://cdn.jsdelivr.net/gh/imsyy/file/pic/close.png) no-repeat 50% 50% !important;
     background-size: 8px !important;
 }
 

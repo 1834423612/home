@@ -1,14 +1,14 @@
 {
-    "title": "kjch况佳城的主页",
-    "description": "一个正在上初三的学生建立的小站点",
-    "keywords": "kjch,kjch况佳城,况佳城,kjch简介,况佳城简介,况佳城个人主页,况佳城的主页,kjch的主页,kjch况佳城的主页",
-    "author": "kjch况佳城無名",
+    "title": "無名の主页",
+    "description": "一个默默无闻的主页",
+    "keywords": "無名,个人主页",
+    "author": "無名",
     "logo_img": "./img/icon/logo.png",
     "logo_text_1": "imsyy",
     "logo_text_2": "top",
     "des_title": [
         "Hello World !",
-        "一个正在上初三的学生建立的小站点"
+        "一个建立于 21 世纪的小站，存活于互联网的边缘"
     ],
     "des_title_change": [
         "Oops !",
@@ -64,6 +64,6 @@
             "https://api.ixiaowai.cn/api/api.php"
         ]
     ],
-    "Copyright_year": "2022",
-    "Copyright_text": "kjch况佳城"
+    "Copyright_year": "2020",
+    "Copyright_text": "無名"
 }
