@@ -873,6 +873,55 @@ input[type="radio"]:checked+label {
     border-radius: 6px;
 }
 
+
+/*设置页自定义颜色布局*/
+/*题目部分背景色*/
+.accordion-button-color-1 {
+    background-color: rgb(99,149,232,0.6) !important;
+}
+
+.accordion-button-color-2 {
+    background-color: rgb(231,218,47,0.5) !important;
+}
+
+.accordion-button-color-3 {
+    background-color: rgb(71,205,177,0.6) !important;
+}
+
+/*卡片主体背景色*/
+.accordion-body-color-1 {
+    background-color: rgba(113,143,192,0.4) !important;
+}
+
+.accordion-body-color-2 {
+    background-color: rgba(239,230,116,0.3) !important;
+}
+
+.accordion-body-color-3 {
+    background-color: rgba(131,198,185,0.4) !important;
+}
+
+/*Aplayer 播放器列表*/
+.aplayer .aplayer-body {
+    position: relative;
+    background-color: rgb(221 162 185 / 60%) !important;
+}
+
+.aplayer.aplayer-withlist .aplayer-list {
+    display: block;
+    background-color: rgb(208 175 192 / 30%) !important;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background-color: rgb(247 219 238 / 40%) !important; /*rgb(116 164 230 / 40%)*/
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-cur {
+    background-color: rgb(240 76 150 / 70%) !important; /*#c9e0ff*/
+}
+
+
+
 /*歌曲名称*/
 .aplayer .aplayer-info .aplayer-music .aplayer-title {
     font-size: 16px !important;
