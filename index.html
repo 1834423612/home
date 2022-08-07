@@ -25,10 +25,8 @@
     <link rel="stylesheet" type="text/css" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/mobile.css">
-    <link rel="stylesheet" type="text/css" href="./css/font.css">
     <link rel="stylesheet" type="text/css" href="./css/loading.css">
     <link rel="stylesheet" type="text/css" href="./css/animation.css">
-    <link rel="stylesheet" type="text/css" href="./css/cursor.css">
     <link rel="icon" href="./favicon.ico">
     <link rel="apple-touch-icon" href="./img/icon/apple-touch-icon.png">
     <!-- Izitoast -->
@@ -36,7 +34,7 @@
     <script type="text/javascript" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js">
     </script>
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://file.imsyy.top/font/fontawesome/css/pro.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <!-- Aplayer -->
     <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -46,6 +44,9 @@
         if ( /*@cc_on!@*/ false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href =
             "/upgrade-your-browser/index.html?referrer=" + encodeURIComponent(window.location.href);
     </script>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+
     <!-- 百度 统计 -->
     <script>
         var _hmt = _hmt || [];
@@ -55,8 +56,10 @@
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
-        </script>        
-    
+        </script>
+
+    <!-- 51.LA 统计 -->
+    <!--<script src="./js/51LA.js"></script>-->
 </head>
 
 <body>
@@ -71,7 +74,7 @@
                 <div class="inner three"></div>
             </div>
             <div class="loading-word">
-                <p class="loading-title">kjch况佳城的主页</p>
+                <p class="loading-title" id="loading-title">kjch况佳城的主页</p>
                 <span id="loading-text">加载中</span>
             </div>
         </div>
@@ -105,7 +108,7 @@
                                 <div class="des" id="des">
                                     <i class="fa-solid fa-quote-left"></i>
                                     <div class="des-title"><span id="change">Hello&nbsp;World&nbsp;!</span><br /><span
-                                            id="change1">一个正在上初三的学生建立的小站点</span></div>
+                                            id="change1">一个初三毕业的学生建立的小站点</span></div>
                                     <i class="fa-solid fa-quote-right"></i>
                                 </div>
                             </div>
@@ -121,7 +124,7 @@
                                     <i class="fa-solid fa-envelope"></i>
                                 </a>
                                 <a href="https://blog.kjchmc.cn/" class="link" id="Blog" target="_blank">
-                                    <i class="fa-solid fa-pen-line"></i>
+                                    <i class="fa-solid fa-pen"></i>
                                 </a>
                                 <a href="https://blog.kjchmc.cn/About" class="link" id="About" target="_blank">
                                     <i class="fa-solid fa-circle-info"></i>
@@ -217,18 +220,18 @@
                                         </a>
                                     </div>
                                     <div class="col 2">
-                                        <a id="link-url-2" href="https://pic.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-2" href="https://dh.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i id="link-icon-2" class="fa-solid fa-images"></i>
-                                                <span class="link-name" id="link-name-2">图床</span>
+                                                <i id="link-icon-2" class="fa-solid fa-compass"></i>
+                                                <span class="link-name" id="link-name-2">起始页</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a id="link-url-3" href="https://api.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-3" href="https://file.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i id="link-icon-3" class="fa-duotone fa-terminal"></i>
-                                                <span class="link-name" id="link-name-3">API</span>
+                                                <i id="link-icon-3" class="fa-solid fa-folder-open"></i>
+                                                <span class="link-name" id="link-name-3">文件库</span>
                                             </div>
                                         </a>
                                     </div>
@@ -236,26 +239,26 @@
                                 <!--第二组-->
                                 <div class="row" style="margin-top: 1.5rem;">
                                     <div class="col">
-                                        <a id="link-url-4" href="https://dh.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-4" href="https://api.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i id="link-icon-4" class="fa-solid fa-compass"></i>
-                                                <span class="link-name" id="link-name-4">起始页</span>
+                                                <i id="link-icon-4" class="fa-solid fa-terminal"></i>
+                                                <span class="link-name" id="link-name-4">API</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col 2">
                                         <a id="link-url-5" href="https://lab.imsyy.top/game/2048/" target="_blank">
                                             <div class="link-card cards">
-                                                <i id="link-icon-5" class="fa-solid fa-game-board"></i>
+                                                <i id="link-icon-5" class="fa-solid fa-chess-board"></i>
                                                 <span class="link-name" id="link-name-5">2048</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col">
-                                        <a id="link-url-6" href="https://file.kjchmc.cn/" target="_blank">
+                                        <a id="link-url-6" href="https://status.kjchmc.cn/" target="_blank">
                                             <div class="link-card cards">
-                                                <i id="link-icon-6" class="fa-solid fa-folder-open"></i>
-                                                <span class="link-name" id="link-name-6">文件库</span>
+                                                <i id="link-icon-6" class="fa-solid fa-signal"></i>
+                                                <span class="link-name" id="link-name-6">站点检测</span>
                                             </div>
                                         </a>
                                     </div>
@@ -285,7 +288,7 @@
                         <div class="item" id="dayProgress">
                             <div class="date-text" style="margin-top: 0rem;">今日已经度过了&nbsp;<span></span>&nbsp;小时</div>
                             <div class="progress">
-                                <div class="progress-bar" style="background-color: rgb(96,140,201) !important;"></div><!--125 106 243-->
+                                <div class="progress-bar" style="background-color: rgb(96,140,201) !important;"></div>
                             </div>
                         </div>
                         <div class="item" id="weekProgress">
@@ -315,9 +318,9 @@
                     <!--网站链接-->
                     <div class="row">
                         <div class="col">
-                            <a href="http://status.api.kjchmc.cn/" target="_blank">
+                            <a href="https://pic.kjchmc.cn/" target="_blank">
                                 <div class="link-card cards">
-                                    <span class="link-name">站点监测</span>
+                                    <span class="link-name">图床</span>
                                 </div>
                             </a>
                         </div>
@@ -370,9 +373,9 @@
                         <!--左侧内容-->
                         <div class="box-left">
                             <div class="img-title">
-                                <span class="img-title">kjchmc</span>
-                                <span class="img-text">.cn</span><br />
-                                <span class="img-text">&nbsp;&nbsp;v&nbsp;1.3</span>
+                                <span class="img-title-big" id="logo-title-other">kjchmc</span>
+                                <span class="img-text" id="logo-title-other-small">.cn</span><br />
+                                <span class="img-text">&nbsp;v&nbsp;2.3</span>
                                 <a href="https://github.com/1834423612" target="_blank">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
@@ -520,10 +523,8 @@
     <script type="text/javascript" src="./js/set.js"></script>
     <script type="text/javascript" src="./js/time.js"></script>
     <script type="text/javascript" src="./js/js.cookie.js"></script>
-    <script type="text/javascript" src="./js/set.js"></script>
-    <script type="text/javascript" src="./js/cursor.js"></script>
-    <script type="text/javascript" src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://ip.kjchmc.cn/home/index.php"></script>
+    <script type="text/javascript" src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

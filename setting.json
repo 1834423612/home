@@ -1,54 +1,54 @@
 {
     "title": "kjch况佳城的主页",
-    "description": "一个正在上初三的学生建立的小站点",
+    "description": "一个初三毕业生建立的小站点",
     "keywords": "kjch,kjch况佳城,况佳城,kjch简介,况佳城简介,况佳城个人主页,况佳城的主页,kjch的主页,kjch况佳城的主页",
-    "author": "kjch况佳城無名",
-    "logo_img": "./img/icon/logo.png",
-    "logo_text_1": "imsyy",
-    "logo_text_2": "top",
+    "author": "kjch况佳城",
+    "logo_img": "https://raw.githubusercontents.com/1834423612/img-hosting/master/blog/浣熊.png",
+    "logo_text_1": "kjchmc",
+    "logo_text_2": "cn",
     "des_title": [
         "Hello World !",
-        "一个正在上初三的学生建立的小站点"
+        "一个初三毕业生建立的小站点"
     ],
     "des_title_change": [
         "Oops !",
         "哎呀，这都被你发现了 ( 再点击一次可关闭 )"
     ],
-    "github": "imsyy",
-    "qq": "1539250352",
-    "email": "one@imsyy.top",
-    "telegram": "bottom_user",
-    "twitter": "iimmsyy",
+    "github": "1834423612",
+    "qq": "1834423612",
+    "email": "1834423612@qq.com",
+    "telegram": "",
+    "twitter": "",
     "weather_api": "https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1",
     "link_1": [
-        "https://blog.imsyy.top/",
+        "https://blog.kjchmc.cn/",
         "fa-solid fa-blog",
-        "博客"
+        "老况的小窝"
     ],
     "link_2": [
-        "https://drive.imsyy.top/",
-        "fa-solid fa-cloud",
-        "网盘"
+        "https://pic.kjchmc.cn/",
+        "fa-solid fa-images",
+        "图床"
     ],
     "link_3": [
-        "https://blog.imsyy.top/",
-        "fa-solid fa-music",
-        "音乐"
+        "https://api.kjchmc.cn/",
+        "fa-duotone fa-terminal",
+        "API"
     ],
     "link_4": [
-        "https://nav.imsyy.top/",
+        "https://dh.kjchmc.cn/",
         "fa-solid fa-compass",
         "起始页"
     ],
     "link_5": [
-        "https://web.imsyy.top/",
-        "fa-solid fa-book-bookmark",
-        "网址集"
+        "https://lab.imsyy.top/game/2048/",
+        "fa-solid fa-game-board",
+        "2048"
     ],
     "link_6": [
-        "https://lab.imsyy.top/",
-        "fa-solid fa-flask",
-        "实验室"
+        "https://file.kjchmc.cn/",
+        "fa-solid fa-folder-open",
+        "文件库"
     ],
     "wallpaper_api": [
         [

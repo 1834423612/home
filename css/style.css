@@ -41,7 +41,7 @@ body {
 a,
 p {
     text-decoration: none;
-    transition: 0.3s;
+    /*transition: 0.3s;*/
     color: #efefef;
     user-select: none;
     font-family: 'MiSans', sans-serif;
@@ -641,7 +641,7 @@ i.iconfont.icon-z_shangpinheji {
 .progress-bar {
     font-family: 'UnidreamLED' !important;
     background-color: #efefef !important;
-    /*color: rgb(86 77 89) !important;*/
+    color: rgb(86 77 89) !important;
     font-size: 0.95rem;
     height: 20px;
 }
@@ -771,12 +771,6 @@ i.iconfont.icon-github1 {
     padding: 0rem 1.5rem;
 }
 
-.restcache {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 1.5rem;
-}
-
 .btn-group,
 .btn-group-vertical {
     margin-top: 10px;
@@ -836,6 +830,52 @@ input[type="radio"]:checked+label {
     border: 2px solid #eeeeee;
 }
 
+/*更新日志*/
+.upnote {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1.5rem;
+    height: 156px;
+    overflow-y: auto;
+}
+
+.uptext {
+    line-height: 32px;
+}
+
+/*Aplayer*/
+.box-right {
+    flex: 0 54%;
+    max-width: 54%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.aplayer {
+    background: transparent !important;
+    width: 100%;
+    border-radius: 6px !important;
+    margin-right: 18px;
+}
+
+.aplayer.aplayer-withlrc .aplayer-pic {
+    display: none;
+}
+
+.aplayer.aplayer-withlrc .aplayer-info {
+    margin-left: 0px !important;
+}
+
+.aplayer.aplayer-withlrc .aplayer-info {
+    background-color: #ffffff26;
+    border-radius: 6px;
+}
+
+
+/*设置页自定义颜色布局*/
+
 /*缓存设置*/
 #cache-settings {
     display: flex;
@@ -867,20 +907,6 @@ input[type="cache"]:checked+label {
     border: 2px solid #eeeeee;
 }
 
-/*更新日志*/
-.upnote {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem 1.5rem;
-    height: 123px;
-    overflow-y: auto;
-}
-
-.uptext {
-    line-height: 32px;
-}
-
-/*设置页自定义颜色布局*/
 /*题目部分背景色*/
 .accordion-button-color-1 {
     background-color: rgb(99,149,232,0.6) !important;
@@ -927,35 +953,6 @@ input[type="cache"]:checked+label {
 }
 
 
-/*Aplayer*/
-.box-right {
-    flex: 0 54%;
-    max-width: 54%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.aplayer {
-    background: transparent !important;
-    width: 100%;
-    border-radius: 6px !important;
-    margin-right: 18px;
-}
-
-.aplayer.aplayer-withlrc .aplayer-pic {
-    display: none;
-}
-
-.aplayer.aplayer-withlrc .aplayer-info {
-    margin-left: 0px !important;
-}
-
-.aplayer.aplayer-withlrc .aplayer-info {
-    background-color: #ffffff26;
-    border-radius: 6px;
-}
 
 /*歌曲名称*/
 .aplayer .aplayer-info .aplayer-music .aplayer-title {
@@ -1107,7 +1104,7 @@ footer {
 }
 
 .iziToast>.iziToast-close {
-    background: url(https://raw.githubusercontents.com/imsyy/master/file/pic/close.png) no-repeat 50% 50% !important;
+    background: url(https://cdn.jsdelivr.net/gh/imsyy/file/pic/close.png) no-repeat 50% 50% !important;
     background-size: 8px !important;
 }
 

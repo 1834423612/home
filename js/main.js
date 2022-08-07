@@ -234,7 +234,6 @@ function time() {
     if (s < 10) {
         s = "0" + s;
     }
-    //document.getElementById("time").innerHTML = y + "&nbsp;年&nbsp;" + mm + "&nbsp;月&nbsp;" + d + "&nbsp;日&nbsp;" + "<span class='weekday'>" + weekday[day] + "</span><br>" + "<span class='time-text'>" + h + ":" + m + ":" + s + "</span>";
     $("#time").html(y + "&nbsp;年&nbsp;" + mm + "&nbsp;月&nbsp;" + d + "&nbsp;日&nbsp;" + "<span class='weekday'>" + weekday[day] + "</span><br>" + "<span class='time-text'>" + h + ":" + m + ":" + s + "</span>");
     t = setTimeout(time, 1000);
 }
@@ -320,7 +319,7 @@ $('#switchmore').on('click', function () {
     } else {
         $('#container').attr('class', 'container');
         $("#change").html("Hello&nbsp;World&nbsp;!");
-        $("#change1").html("一个正在上初三的学生建立的小站点");
+        $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
     }
 });
 
@@ -369,7 +368,7 @@ window.addEventListener('load', function () {
             //移动端隐藏更多页面
             $('#container').attr('class', 'container');
             $("#change").html("Hello&nbsp;World&nbsp;!");
-            $("#change1").html("一个正在上初三的学生建立的小站点");
+            $("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
 
             //移动端隐藏弹窗页面
             $('#box').css("display", "none");
@@ -407,70 +406,35 @@ document.oncontextmenu = function () {
     return false;
 }
 
-//自动变灰
-var myDate = new Date;
-var mon = myDate.getMonth() + 1;
-var date = myDate.getDate();
-var days = ['3.21', '4.4', '5.12', '7.7', '7.20', '9.9', '9.18', '12.13'];
-for (var day of days) {
-    var d = day.split('.');
-    if (mon == d[0] && date == d[1]) {
-        document.write(
-            '<style>html{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>'
-        )
-        $("#change").html("Silence&nbsp;in&nbsp;silence");
-        $("#change1").html("今天是中国国家纪念日，全站已切换为黑白模式");
-        window.addEventListener('load', function () {
-            iziToast.show({
-                timeout: 14000,
-                icon: "fa-solid fa-candle-holder",
-                message: '今天是纪念日'
-            });
-        }, false);
-    }
-}
-
 //控制台输出
+console.clear();
 var styleTitle1 = `
 font-size: 20px;
 font-weight: 600;
-color: rgb(255,160,122);
+color: rgb(244,167,89);
 `
 var styleTitle2 = `
-font-size: 12px;
-color: rgb(100,149,237);
+font-size:12px;
+color: rgb(244,167,89);
 `
 var styleContent = `
-color: rgb(60,179,113);
+color: rgb(30,152,255);
 `
-var stylecopyright = `
-font-size: 15px;
-color: red;
-`
-
-var title1 = '老况的主页'
+var title1 = '無名の主页'
 var title2 = `
-
-██╗  ██╗     ██╗ ██████╗██╗  ██╗
-██║ ██╔╝     ██║██╔════╝██║  ██║
-█████╔╝      ██║██║     ███████║
-██╔═██╗ ██   ██║██║     ██╔══██║
-██║  ██╗╚█████╔╝╚██████╗██║  ██║
-╚═╝  ╚═╝ ╚════╝  ╚═════╝╚═╝  ╚═╝                                                                                                           
+ _____ __  __  _______     ____     __
+|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
+  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
+  | | | |\\/| |\\___ \\  \\   /    \\   /  
+ _| |_| |  | |____) |  | |      | |   
+|_____|_|  |_|_____/   |_|      |_|                                                     
 `
 var content = `
-版 本 号：v1.0
-更新日期：2022-06-01
+版 本 号：3.3
+更新日期：2022-07-06
 
-主页:  https://www.kjchmc.cn/
-Github:  https://github.com/1834423612/home/
+主页:  https://www.imsyy.top
+Github:  https://github.com/imsyy/home
 `
-
-var copyright = `
-本页面源代码来自于：
-Github:  https://github.com/imsyy/home/
-`
-
-console.clear()
 console.log(`%c${title1} %c${title2}
-%c${content} %c${copyright}`, styleTitle1, styleTitle2, styleContent, stylecopyright)
+%c${content}`, styleTitle1, styleTitle2, styleContent)
